@@ -29,6 +29,11 @@ export class UsersService {
     return user;
   }
 
+  async findByGoogleId(googleId: string) {
+    const user = await this.userRepository.findOne({ where: { googleId } });
+    return user;
+  }
+
   async update(id: string, updateUserDto: UpdateUserDto) {
     const user = await this.findOne(id);
     Object.assign(user, updateUserDto);

@@ -4,6 +4,6 @@ export const jwtConfig: JwtModuleAsyncOptions = {
   global: true,
   useFactory: () => ({
     secret: process.env.JWT_SECRET,
-    signOptions: { expiresIn: '60s' },
+    signOptions: { expiresIn: '1h' },
   }),
 };
