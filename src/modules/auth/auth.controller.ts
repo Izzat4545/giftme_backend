@@ -17,11 +17,6 @@ import { GoogleOAuthGuard } from 'src/common/google-oauth.guard';
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
-  @Get()
-  @UseGuards(GoogleOAuthGuard)
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  async googleAuth() {}
-
   @Get('google/callback')
   @UseGuards(GoogleOAuthGuard)
   googleAuthRedirect(@Req() req: Request, @Res() res: Response) {
